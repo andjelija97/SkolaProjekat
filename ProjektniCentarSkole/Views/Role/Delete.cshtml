@@ -1,0 +1,34 @@
+﻿<!--Pogled koji sluzi za potvrdjivanje brisanja odabrane uloge-->
+@model ProjektniCentarSkole.Models.RoleViewModel
+
+@{
+    ViewBag.Title = "Brisanje uloge";
+}
+
+<h2>Brisanje uloge</h2>
+
+<h3>Da li ste sigurni da zelite da obrisete ovu ulogu?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Naziv uloge:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obrisi ulogu" class="btn btn-default" /> |
+            @Html.ActionLink("Nazad na listu uloga", "Index")
+        </div>
+    }
+</div>

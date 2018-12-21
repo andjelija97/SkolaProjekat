@@ -1,0 +1,53 @@
+﻿<!--Pogled koji prikazuje listu mailova odredjene kontakt osobe-->
+@model IEnumerable<ProjektniCentarSkole.Mail>
+
+@{
+    ViewBag.Title = "Lista mailova";
+}
+
+<h2>Lista mailova</h2>
+
+@Html.ActionLink("Dodaj novi mail", "DodajMail", TempData["idKo"], htmlAttributes: new { @class = "btn btn-primary btn-sm" }) |
+
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Oznaka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.IdKontaktOsoba == (int)TempData["idKo"])
+        {
+
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Oznaka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KontaktOsoba.Ime)
+                </td>
+                <td>
+                    @Html.ActionLink("Izmeni mail", "IzmeniMail", new { id = item.Id }) |
+                    @Html.ActionLink("Detalji", "DetaljiMail", new { id = item.Id }) |
+                    @Html.ActionLink("Obrisi", "ObrisiMail", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    }
+
+</table>

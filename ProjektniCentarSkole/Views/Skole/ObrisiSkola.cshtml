@@ -1,0 +1,22 @@
+﻿<!--Pogled koji sluzi za potvrdjivanje brisanja odabrane skole-->
+@model ProjektniCentarSkole.Skola
+
+@{
+    ViewBag.Title = "ObrisiSkola";
+}
+
+<h2>Obrisi skolu</h2>
+
+<h3>Da li ste sigurni da zelite da obrisete ovu skolu?</h3>
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obrisi skolu" class="btn btn-default" /> <br /><br />
+            @Html.ActionLink("Nazad na listu skola", "Index")
+        </div>
+    }
+</div>

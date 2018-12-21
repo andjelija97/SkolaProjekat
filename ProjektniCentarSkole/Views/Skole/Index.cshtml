@@ -1,0 +1,100 @@
+﻿<!--Pogled koji prikazuje listu skola-->
+@model IEnumerable<ProjektniCentarSkole.Skola>
+
+@{
+    ViewBag.Title = "Lista skola";
+}
+
+<h2>Lista skola</h2>
+
+@Html.ActionLink("Dodaj novu skolu", "DodajSkolu", null, htmlAttributes: new { @class = "btn btn-primary btn-sm" })
+
+<br />
+<br />
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NazivSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresaSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaticniBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PIB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojRacuna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pecat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beleska)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NazivSkole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresaSkole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opstina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostanskiBroj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaticniBroj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrojRacuna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebStranica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pecat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beleska)
+            </td>
+            <td>
+
+                @Html.ActionLink("Izmeni", "IzmeniSkola", new { id = item.Id })
+                @Html.ActionLink("Detalji", "DetaljiSkola", new { id = item.Id })
+                @Html.ActionLink("Obrisi", "ObrisiSkola", new { id = item.Id })
+            </td>
+            <td>
+
+                @Html.ActionLink("Dodaj kontakt osobu", "Preusmeri", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-primary btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,22 @@
+﻿<!--Pogled koji sluzi za potvrdjivanje brisanja odabrane kontakt osobe-->
+@model ProjektniCentarSkole.KontaktOsoba
+
+@{
+    ViewBag.Title = "Obrisi kontakt osobu";
+}
+
+<h2>ObrisiKontaktOsobu</h2>
+
+<h3>Da li ste sigurni da zelite da obrisete ovu kontakt osobu?</h3>
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obrisite" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

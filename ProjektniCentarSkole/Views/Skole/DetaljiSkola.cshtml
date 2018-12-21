@@ -1,0 +1,99 @@
+﻿<!--Pogled koji prikazuje detalje o odabranoj skoli-->
+@model ProjektniCentarSkole.Skola
+
+@{
+    ViewBag.Title = "DetaljiSkola";
+}
+
+<h2>DetaljiSkola</h2>
+
+<div>
+    <h4>Skola</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivSkole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivSkole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresaSkole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresaSkole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opstina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostanskiBroj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaticniBroj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaticniBroj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojRacuna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojRacuna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebStranica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pecat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pecat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beleska)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beleska)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Nazad na listu skola", "Index")
+</p>

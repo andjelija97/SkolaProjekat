@@ -1,0 +1,51 @@
+﻿<!--Pogled koji prikazuje detalje o odabranom telefonu odredjene kontakt osobe-->
+@model ProjektniCentarSkole.Telefon
+
+@{
+    ViewBag.Title = "Detalji Telefon";
+}
+
+<h2>Detalji Telefon</h2>
+
+<div>
+    <h4>Telefon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Oznaka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oznaka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Broj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Broj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lokal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lokal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KontaktOsoba.Ime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "Index", "Skole")
+</p>

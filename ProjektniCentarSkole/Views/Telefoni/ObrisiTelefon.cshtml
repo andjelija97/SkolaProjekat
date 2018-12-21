@@ -1,0 +1,23 @@
+﻿<!--Pogled koji sluzi za potvrdjivanje brisanja odabranog telefona-->
+@model ProjektniCentarSkole.Telefon
+
+@{
+    ViewBag.Title = "ObrisiTelefon";
+}
+
+<h2>Obrisi Telefon</h2>
+
+<h3>Da li ste sigurni da zelite da obrisete ovaj telefon?</h3>
+<div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

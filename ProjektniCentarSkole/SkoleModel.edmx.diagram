@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bdabdbc50e5b4d7ab56cb332c336b867" Name="Diagram1">
+        <EntityTypeShape EntityType="BazaSkoleModel.KontaktOsoba" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaSkoleModel.Mail" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaSkoleModel.Skola" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaSkoleModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaSkoleModel.Telefon" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="BazaSkoleModel.FK_KontaktOsoba_Skola" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaSkoleModel.FK_Mail_KontaktOsoba" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaSkoleModel.FK_Telefon_KontaktOsoba" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

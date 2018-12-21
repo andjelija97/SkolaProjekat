@@ -1,0 +1,71 @@
+﻿<!--Pogled koji prikazuje listu kontakt osoba odredjene skole-->
+@using ProjektniCentarSkole.Controllers
+@model IEnumerable<ProjektniCentarSkole.KontaktOsoba>
+
+@{
+    ViewBag.Title = "Lista kontakt osoba";
+}
+
+<h2>Lista kontakt osoba</h2>
+<p>@ViewBag.IdSkole</p>
+@Html.ActionLink("Dodaj novu kontakt osobu", "DodajKontaktOsobu", TempData["id"], htmlAttributes: new { @class = "btn btn-primary btn-sm" }) |
+
+<br/>
+<br/>
+    <table class="table">
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RadnoMesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skola.NazivSkole)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+            if (item.IdSkola == @ViewBag.id)
+            {
+
+                <tr>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prezime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RadnoMesto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Skola.NazivSkole)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Izmeni kontakt osobu", "IzmeniKontaktOsobu", new { id = item.Id }) |
+                        @Html.ActionLink("Detalji", "DetaljiKontaktOsobe", new { id = item.Id }) |
+                        @Html.ActionLink("Obrisi", "ObrisiKontaktOsobu", new { id = item.Id })
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Dodaj mail", "IndexMail", "Mailovi", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-primary btn-sm" }) 
+                        @Html.ActionLink("Dodaj telefon", "indexTelefon", "Telefoni", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-primary btn-sm" })
+                    </td>
+
+                </tr>
+
+            }
+
+        }
+    </table>
